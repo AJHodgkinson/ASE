@@ -65,7 +65,7 @@ Use the mapped data as the basis to create the simulated dataset:
 Step 3: 
 -------
 
-The simulation program will generate two fastq.gz files contained read pairs.  Map these files using the exact same approach that you used in step 1. 
+The simulation program will generate two fastq.gz files containing read pairs.  Map these files using the exact same approach that you used in step 1. 
 
 The simulation program will also produce two count files showing the number of reference (and thus alternative) reads covering each site for both trimmed (ignoring read pair overlaps) and non-trimmed data.  These are for use in the ase_normalisation_compare.pl program to generate results.
 
@@ -75,8 +75,9 @@ Step 4:
 Use the original mapped data, the simulated mapped data and the count files (Null_sim_file below) to generate P-values for each heterozygous site:
 
 
-	perl ase_normalisation_compare.pl [options] --DNAvcf <VCF_file_name> --DNAid <ind_id_from_vcf> --OUTid <Outfolder_name> 
-	--RNAbam <Mapped_RNA_BAM> --RNASIMbam <Mapped_RNASIM_BAM> --Ref <Reference_fasta> --MapNull <Null_sim_file>
+	perl ase_normalisation_compare.pl [options] --DNAvcf <VCF_file_name> --DNAid <ind_id_from_vcf> 
+	--OUTid <Outfolder_name> --RNAbam <Mapped_RNA_BAM> --RNASIMbam <Mapped_RNASIM_BAM> 
+	--Ref <Reference_fasta> --MapNull <Null_sim_file>
 	
 --DNAvcf <VCF_file_name> : Name and path to VCF file containing variation that will be used within the simulation. (Required)
 
