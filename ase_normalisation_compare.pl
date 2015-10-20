@@ -292,7 +292,7 @@ ASE Calc Program
  
 =head1 USAGE
 
-perl ase_normalisation_compare_1chr_full_par.pl [options] --DNAvcf <VCF_file_name> --DNAid <ind_id_from_vcf> --OUTid <Outfolder_name> --RNAbam <Mapped_RNA_BAM> --RNASIMbam <Mapped_RNASIM_BAM> --Ref <Reference_fasta> --MapNull <Null_sim_file>
+perl ase_normalisation_compare.pl [options] --DNAvcf <VCF_file_name> --DNAid <ind_id_from_vcf> --OUTid <Outfolder_name> --RNAbam <Mapped_RNA_BAM> --RNASIMbam <Mapped_RNASIM_BAM> --Ref <Reference_fasta> --MapNull <Null_sim_file>
 
 =head1 OPTIONS
 
