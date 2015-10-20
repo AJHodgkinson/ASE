@@ -508,7 +508,7 @@ ASE Program
  
 =head1 USAGE
 
-perl ase_normalisation_sim_fast_indel_testing18.pl [options] --DNAvcf <VCF_file_name> --DNAid <ind_id_from_vcf> --OUTid <Outfolder_name> --RNAbam <Mapped_RNA_BAM>
+perl ase_normalisation_sim.pl [options] --DNAvcf <VCF_file_name> --DNAid <ind_id_from_vcf> --OUTid <Outfolder_name> --RNAbam <Mapped_RNA_BAM>
 
 =head1 OPTIONS
 
