@@ -65,7 +65,7 @@ Use the mapped data as the basis to create the simulated dataset:
 Step 3: 
 -------
 
-The simulation program will generate two fastq.gz files with paired reads.  Map these files using the exact same approach that you used in step 1. 
+The simulation program will generate two fastq.gz files contained read pairs.  Map these files using the exact same approach that you used in step 1. 
 
 The simulation program will also produce two count files showing the number of reference (and thus alternative) reads covering each site for both trimmed (ignoring read pair overlaps) and non-trimmed data.  These are for use in the ase_normalisation_compare.pl program to generate results.
 
