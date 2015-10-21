@@ -118,7 +118,7 @@ Column5 (SimRef): Proportion of reference alleles in mapped simulated data
 
 Column6 (SimCov): Coverage in mapped simulated data
 
-Column7 (SimAdjRef): Proportion of reference alleles heterozygous site after normalisation
+Column7 (SimAdjRef): Proportion of reference alleles at heterozygous site after normalisation
 
 Column8 (SimAdjCov): Coverage at heterozygous site after normalisation
 
