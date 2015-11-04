@@ -6,3 +6,8 @@ The data provided here allows users to test the software on some small files bef
 2. Mapped data: ind1_snps_chr22.Aligned.out.sort.PP.UM.bam - The above files were mapped with STAR and filtered.  If you don't want to map the fastq files yourself, this bam file can be used in the simulation program.
 3. SNP file: ind1.vcf - this file shows the locations of polymorphisms in the fastq files and is to be used in the simulation program.
 4. A results file: all_results_ind1_1_STAR_gatk.txt - Having used the normalisation software on the above files, your results should be similar to those in this file. 
+
+##Steps to recreate example results file:
+
+1. Generate a high coverage null dataset with the files provided by running the following command:
+  perl ase_sim.pl
