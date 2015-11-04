@@ -13,6 +13,8 @@ The data provided here allows users to test the software on some small files bef
 
         perl ase_normalisation_sim.pl --DNAid ind1 --OUTid ind1 --DNAvcf ind1.vcf --RNAbam ind1_snps_chr22.Aligned.out.sort.PP.UM.bam --MaxProcs 8 --SampleDepth 2000
 
+This will produce a null allele file 'ref_allele_count_ind1.txt' for use in the final step
+
 2. Map and filter the null dataset in the same way as the original data.  If using the test BAM file, use the following approach:
 
         #Map data:
@@ -35,5 +37,7 @@ The data provided here allows users to test the software on some small files bef
         samtools view -h ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.bam | grep -P "NH:i:1\t|^@" | samtools view -bS - > ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.UM.bam
         samtools index ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.UM.bam
 
-This will produce an 
-        
+3. Use the compare software to get the allele counts before and after normalisation:
+
+        perl ase_normalisation_compare.pl --DNAid ind1 --OUTid ind1 --DNAvcf ind1.vcf --RNAbam ind1_snps_chr22.Aligned.out.sort.PP.UM.bam --RNASIMbam ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.UM.bam --Ref hg19.fasta --MapNull ref_allele_count_ind1.txt --MaxProcs 8
+
