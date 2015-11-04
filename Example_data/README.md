@@ -35,5 +35,5 @@ The data provided here allows users to test the software on some small files bef
         samtools view -h ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.bam | grep -P "NH:i:1\t|^@" | samtools view -bS - > ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.UM.bam
         samtools index ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.UM.bam
 
-3. 
+This will produce an 
         
