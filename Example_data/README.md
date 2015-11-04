@@ -12,3 +12,13 @@ The data provided here allows users to test the software on some small files bef
 1. Generate a high coverage null dataset with the files provided by running the following command:
 
         perl ase_normalisation_sim.pl --DNAid ind1 --OUTid ind1 --DNAvcf ind1.vcf --RNAbam ind1_snps_chr22.Aligned.out.sort.PP.UM.bam --MaxProcs 8 --SampleDepth 2000
+
+2. Map and filter the null dataset in the same way as the original data.  If using the test BAM file, use the following approach:
+
+        STAR --genomeDir hg19 --readFilesIn fastq_sim_ind1_R1.fastq.gz fastq_sim_ind1_R2.fastq.gz --runThreadN 12 --readFilesCommand zcat --outSAMstrandField intronMotif --outFileNamePrefix ind1_SNPs_chr22_deepsim.
+        
+        samtools view -bh ind1_SNPs_chr22_deepsim.Aligned.out.sam > ind1_SNPs_chr22_deepsim.Aligned.out.bam
+        
+        samtools sort ind1_SNPs_chr22_deepsim.Aligned.out.bam ind1_SNPs_chr22_deepsim.Aligned.out.sort
+        
+        samtools index ind1_SNPs_chr22_deepsim.Aligned.out.sort.bam
