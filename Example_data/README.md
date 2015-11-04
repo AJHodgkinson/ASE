@@ -10,4 +10,4 @@ The data provided here allows users to test the software on some small files bef
 ##Steps to recreate example results file:
 
 1. Generate a high coverage null dataset with the files provided by running the following command:
-    perl ase_sim.pl
+    perl ase_sim.pl 
