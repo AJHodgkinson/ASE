@@ -18,8 +18,22 @@ The data provided here allows users to test the software on some small files bef
         #Map data:
         STAR --genomeDir hg19 --readFilesIn fastq_sim_ind1_R1.fastq.gz fastq_sim_ind1_R2.fastq.gz --runThreadN 12 --readFilesCommand zcat --outSAMstrandField intronMotif --outFileNamePrefix ind1_SNPs_chr22_deepsim.
         
+        #Covert SAM->BAM
         samtools view -bh ind1_SNPs_chr22_deepsim.Aligned.out.sam > ind1_SNPs_chr22_deepsim.Aligned.out.bam
         
+        #Sort
         samtools sort ind1_SNPs_chr22_deepsim.Aligned.out.bam ind1_SNPs_chr22_deepsim.Aligned.out.sort
         
+        #Index
         samtools index ind1_SNPs_chr22_deepsim.Aligned.out.sort.bam
+        
+        #Keep properly paired reads
+        samtools view -@ 12 -f 0x0002 -b -o ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.bam ind1_SNPs_chr22_deepsim.Aligned.out.sort.bam
+        samtools index ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.bam
+        
+        #Keep Unique hits
+        samtools view -h ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.bam | grep -P "NH:i:1\t|^@" | samtools view -bS - > ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.UM.bam
+        samtools index ind1_SNPs_chr22_deepsim.Aligned.out.sort.PP.UM.bam
+
+3. 
+        
