@@ -15,6 +15,7 @@ The data provided here allows users to test the software on some small files bef
 
 2. Map and filter the null dataset in the same way as the original data.  If using the test BAM file, use the following approach:
 
+        #Map data:
         STAR --genomeDir hg19 --readFilesIn fastq_sim_ind1_R1.fastq.gz fastq_sim_ind1_R2.fastq.gz --runThreadN 12 --readFilesCommand zcat --outSAMstrandField intronMotif --outFileNamePrefix ind1_SNPs_chr22_deepsim.
         
         samtools view -bh ind1_SNPs_chr22_deepsim.Aligned.out.sam > ind1_SNPs_chr22_deepsim.Aligned.out.bam
