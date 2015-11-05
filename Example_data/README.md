@@ -9,7 +9,7 @@ The data provided here allows users to test the software on some small files bef
 
 ##Steps to recreate example results file:
 
-1. Generate a high coverage null dataset with the files provided by running the following command:
+1. Generate a high coverage null dataset with the files provided by running the following command (assuming access to at least 12 cpus, otherwise change to --MaxProcs 1):
 
         perl ase_normalisation_sim.pl --DNAid ind1 --OUTid ind1 --DNAvcf ind1.vcf --RNAbam ind1_snps_chr22.Aligned.out.sort.PP.UM.bam --MaxProcs 8 --SampleDepth 2000
 
