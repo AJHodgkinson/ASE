@@ -10,6 +10,7 @@ use Pod::Usage;
 #Written By: Alan Hodgkinson
 
 ###8th October: adjusted so alt and ref alleles can be flipped (if vcf has been called to a different reference)
+###9th October: chrX added
 
 ###Required:
 my $exome_id = undef; #exome id
@@ -75,7 +76,7 @@ my $pl = Parallel::Loops->new($maxProcs);
 $pl->share(\@het_array);
 $pl->share(\%hets);
 $pl->share(\%null);
-my @chrs = (1..22);
+my @chrs = (1..23);
 $pl->foreach( \@chrs, sub {
 		my $chrs = $_; 
 		&PileupCompare($chrs,$rna_file,$rna_file_sim,$reference,$rna_id);
@@ -128,6 +129,7 @@ sub CollectNull ($$) {
 
 sub PileupCompare ($$$$$) {
   my ($chromosome_number,$rna_file,$rna_file_sim,$reference,$rna_id_local) = @_;
+  $chromosome_number =~ s/23/X/;
   my $chromosome = "chr".$chromosome_number;
   my $bed_file = $rna_res."/snps_".$rna_id_local."_".$chromosome.".bed";
   open (BED, ">$bed_file") || die "Unable to open BED file to write to: $!\n";
@@ -338,3 +340,4 @@ Sainte-Justine UHC Research Center, Montreal University.
 25-March-2015
 
 =cut  
+
