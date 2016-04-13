@@ -6,6 +6,8 @@ These two programs can be used to normalise mapped Paired End RNA sequencing fil
 
 Details for running the programs can be obtained through the --help options.
 
+NB: ase_normalisation_sim.pl was used for the creation of data in the manuscript, "A haplotype-based normalization technique for the analysis and detection of Allele Specific Expression".  ase_normalisation_simV2.pl is the latest version of the software. 
+
 ## Dependencies
 
 Perl Module Requirements: 
