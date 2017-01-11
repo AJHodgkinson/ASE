@@ -71,7 +71,7 @@ Use the mapped data as the basis to create the simulated dataset:
 Step 3: 
 -------
 
-The simulation program will generate two fastq.gz files containing read pairs.  Map these files using the exact same approach that you used in step 1. 
+The simulation program will generate two fastq.gz files containing read pairs.  Map these files using the exact same approach that you used in step 1. <b>NB</b> You should not perform PCR duplicate removal here, even if it was part of your original pipeline. Simulated reads will contain identical copies of read pairs, as well as read pairs belonging to the alternative haplotype, and these will be erroneously removed. Skipping the PCR duplicate removal step will not affect your results, since if duplciates were removed during your initial mapping, they will also not be present in the simulated files.
 
 The simulation program will also produce two count files showing the number of reference (and thus alternative) reads covering each site for both trimmed (ignoring read pair overlaps) and non-trimmed data.  These are for use in the ase_normalisation_compare.pl program to generate results.
 
